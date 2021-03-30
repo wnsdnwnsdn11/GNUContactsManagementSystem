@@ -18,35 +18,56 @@ public class MenuManager {
 			System.out.println("Select one number between 1-7");
 			num = input.nextInt();
 			if (num == 1) {
-				System.out.print("Contacts Name :");
-				String ContactsName = input.next();
-				System.out.print("Contacts Number :");
-				int ContactsNumber = input.nextInt();
-				System.out.print("Contacts Email :");
-				String ContactsEmail = input.next();
-				System.out.print("Contacts Address :");
-				String ContactsAddress = input.next();
-				
-				System.out.println("Contacts Name : " + ContactsName );
-				System.out.println("Contacts Number : " + ContactsNumber );
-				System.out.println("Email : " + ContactsEmail );
-				System.out.println("Address : " + ContactsAddress );
+				AddContacts();
 			}
 			else if(num == 2) {
-				System.out.print("Input a Contacts Name to delete :");
-				String DeleteName = input.next();
+				deleteContacts();
 			}
 			else if(num == 3) {
-				System.out.print("Input a Contacts Name to Edit :");
-				String EditName = input.next();
+				EditContacts();
 			}
 			else if(num == 4) {
-				System.out.print("Input a Contacts Name to View :");
-				String ViewName = input.next();
+				ViewContacts();
 			}
 			else if(num == 5) {
-				System.out.println("Joonwoo Kweon:)");
+				DeveloperInformation();
+			}
+			else {
+				continue;
 			}
 		}
+	}
+	
+	public static void AddContacts() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Contacts Name :");
+		String ContactsName = input.next();
+		System.out.print("Contacts Number :");
+		int ContactsNumber = input.nextInt();
+		System.out.print("Contacts Email :");
+		String ContactsEmail = input.next();
+		System.out.println(ContactsEmail);
+		System.out.print("Contacts Address :");
+		String ContactsAddress = input.next();
+		System.out.println(ContactsAddress);
+	}
+	
+	public static void deleteContacts() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Contacts Name :");
+		String ContactsName = input.next();
+	}
+	public static void EditContacts() { 
+		Scanner input = new Scanner(System.in);
+		System.out.print("Contacts Name :");
+		String ContactsName = input.next();
+	}
+	public static void ViewContacts() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Contacts Name :");
+		String ContactsName = input.next(); 
+	}
+	public static void DeveloperInformation() { 
+		System.out.println("Joonwoo Kweon:)");
 	}
 }
