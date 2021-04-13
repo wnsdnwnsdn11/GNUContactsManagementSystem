@@ -18,9 +18,6 @@ public class Contact {
 	}
 	
 	public void printInfo() {
-		System.out.println("name:" + name);
-		System.out.println("number:" + number);
-		System.out.println("email:" + email);
-		System.out.println("address :" + address);
+		System.out.println("name:" + name + "  number:" + number + "  email:" + email + "  address :" + address);
 	}
 }
