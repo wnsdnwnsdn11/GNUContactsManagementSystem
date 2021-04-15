@@ -51,6 +51,7 @@ public class ContactManager {
 			if (contacts.get(i).getName().equals(ContactName)) {
 				index = i;
 				break;
+				
 			}
 		}
 		if(index >= 0) {
