@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import Contact.Contact;
+import Contact.ContactKind;
+import Contact.RestuarantsContact;
 
 public class ContactManager {
 	ArrayList<Contact> contacts = new ArrayList<Contact>();
@@ -14,25 +16,25 @@ public class ContactManager {
 		int kind = 0;
 		Contact contact;
 		while(kind != 1 && kind != 2 && kind != 3) {			
-			System.out.print("1 for University  ");
-			System.out.print("2 for Shops  ");
+			System.out.println("1 for University  ");
+			System.out.println("2 for Shops  ");
 			System.out.println("3 for Restuarant  ");
-			System.out.println("Select num for Contact Kind :");
+			System.out.print("Select num 1, 2, or 3 for Contact Kind :");
 			kind = input.nextInt();
 			if(kind == 1) {
-				contact = new Contact();
+				contact = new Contact(ContactKind.University);
 				contact.getUesrInput(input);
 				contacts.add(contact);
 				break;
 			}
 			else if (kind == 2) {
-				contact = new ShopContact();
+				contact = new ShopContact(ContactKind.Shops);
 				contact.getUesrInput(input);
 				contacts.add(contact);
 				break;
 			}
 			else if (kind == 3) {
-				contact = new RestuarantContact();
+				contact = new RestuarantsContact(ContactKind.Restaurants );
 				contact.getUesrInput(input);
 				contacts.add(contact);
 				break;
@@ -75,7 +77,7 @@ public class ContactManager {
 					System.out.println("1. Edit Name");
 					System.out.println("2. Edit Number");
 					System.out.println("3. Edit Email");
-					System.out.println("4. Veiw Address");
+					System.out.println("4. Edit Address");
 					System.out.println("5. Exit");
 					System.out.println("Select one number between 1 ~ 6 :");
 					num = input.nextInt();

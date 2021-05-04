@@ -12,8 +12,21 @@ public class Contact {
 	public Contact() {
 
 	}
+	
+	public Contact(ContactKind kind) {
+		this.kind = kind;
+	}
+	
 
 	public Contact(String name, String number, String email, String address) {
+		this.name = name;
+		this.number = number;
+		this.email = email;
+		this.address = address;
+	}
+	
+	public Contact(ContactKind kind, String number, String email, String address) {
+		this.kind = kind;
 		this.name = name;
 		this.number = number;
 		this.email = email;
@@ -59,9 +72,23 @@ public class Contact {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
+	
 	public void printInfo() {
-		System.out.println("name:" + name + "  number:" + number + "  email:" + email + "  address :" + address);
+		String skind = "none";
+		switch(this.kind) {
+		case University:
+			skind = "Univ.";
+			break;
+		case Shops:
+			skind = "Shops.";
+			break;
+		case Restaurants:
+			skind = "Restaurants";
+			break;
+		default:
+			
+		}
+		System.out.println("kind: " + skind + "name:" + name + "  number:" + number + "  email:" + email + "  address :" + address);
 	}
 
 	public void getUesrInput(Scanner input) {
