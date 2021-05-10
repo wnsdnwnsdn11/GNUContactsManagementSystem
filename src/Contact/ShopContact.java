@@ -2,14 +2,11 @@ package Contact;
 
 import java.util.Scanner;
 
-public class RestuarantsContact extends Contact implements ContactInput {
+public class ShopContact extends Contact implements ContactInput {
 
-	public RestuarantsContact(ContactKind kind) {
+	public ShopContact(ContactKind kind) {
 		super(kind);
 	}
-
-	protected String branchAddress;
-	protected String branchnumber;
 
 	public void getUesrInput(Scanner input) {
 		System.out.print("Contact Name :");
@@ -22,10 +19,10 @@ public class RestuarantsContact extends Contact implements ContactInput {
 		char answer = 'x';
 		while(answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
 		{
-			System.out.print("Do you have an Email? (Y/N)");
+			System.out.print("Do you have an email address? (Y/N)");
 			answer = input.next().charAt(0);
 			if(answer == 'y' || answer == 'Y') {
-				System.out.print("Contact email :");
+				System.out.print("Contact Email :");
 				String email = input.next();
 				this.setEmail(email);
 				break;
@@ -35,6 +32,7 @@ public class RestuarantsContact extends Contact implements ContactInput {
 				break;
 			}
 			else {
+
 			}
 		}
 
@@ -44,7 +42,7 @@ public class RestuarantsContact extends Contact implements ContactInput {
 			System.out.print("Do you have an address? (Y/N)");
 			answer = input.next().charAt(0);
 			if(answer == 'y' || answer == 'Y') {
-				System.out.print("Contact address :");
+				System.out.print("Contact Address :");
 				String address = input.next();
 				this.setAddress(address);
 				break;
@@ -54,25 +52,7 @@ public class RestuarantsContact extends Contact implements ContactInput {
 				break;
 			}
 			else {
-			}
-		}
 
-		answer = 'x';
-		while(answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
-		{
-			System.out.print("Do you have a branch's address? (Y/N)");
-			answer = input.next().charAt(0);
-			if(answer == 'y' || answer == 'Y') {
-				System.out.print("branch's address :");
-				String address = input.next();
-				this.setAddress(address);
-				break;
-			}
-			else if (answer == 'n' || answer == 'N') {
-				this.setAddress("X");
-				break;
-			}
-			else {
 			}
 		}
 	}
@@ -90,11 +70,9 @@ public class RestuarantsContact extends Contact implements ContactInput {
 			skind = "Restaurants";
 			break;
 		default:
-
 		}
-		System.out.println("kind:" + skind + " name:" + name + " number:" + number + " email:" + email + " address:" 				 + address + " branch's address:" + address);
+		System.out.println("kind: " + skind + "name:" + name + "  number:" + number + "  email:" + email + "  				 address :" + address);
 	}
 }
-
 
 
