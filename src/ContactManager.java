@@ -2,11 +2,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import Contact.Contact;
+import Contact.ContactInput;
 import Contact.ContactKind;
 import Contact.RestuarantsContact;
+import Contact.ShopContact;
+import Contact.UniversityContact;
 
 public class ContactManager {
-	ArrayList<Contact> contacts = new ArrayList<Contact>();
+	ArrayList<ContactInput> contacts = new ArrayList<ContactInput>();
 	Scanner input;
 	ContactManager(Scanner input){
 		this.input = input;
@@ -14,7 +17,7 @@ public class ContactManager {
 
 	public void AddContact() {
 		int kind = 0;
-		Contact contact;
+		ContactInput contactInput;
 		while(kind != 1 && kind != 2 && kind != 3) {			
 			System.out.println("1 for University  ");
 			System.out.println("2 for Shops  ");
@@ -22,21 +25,21 @@ public class ContactManager {
 			System.out.print("Select num 1, 2, or 3 for Contact Kind :");
 			kind = input.nextInt();
 			if(kind == 1) {
-				contact = new Contact(ContactKind.University);
-				contact.getUesrInput(input);
-				contacts.add(contact);
+				contactInput = new UniversityContact(ContactKind.University);
+				contactInput.getUesrInput(input);
+				contacts.add(contactInput);
 				break;
 			}
 			else if (kind == 2) {
-				contact = new ShopContact(ContactKind.Shops);
-				contact.getUesrInput(input);
-				contacts.add(contact);
+				contactInput = new ShopContact(ContactKind.Shops);
+				contactInput.getUesrInput(input);
+				contacts.add(contactInput);
 				break;
 			}
 			else if (kind == 3) {
-				contact = new RestuarantsContact(ContactKind.Restaurants );
-				contact.getUesrInput(input);
-				contacts.add(contact);
+				contactInput = new RestuarantsContact(ContactKind.Restaurants );
+				contactInput.getUesrInput(input);
+				contacts.add(contactInput);
 				break;
 			}
 			else {
@@ -69,8 +72,8 @@ public class ContactManager {
 		System.out.print("Contact Name :");
 		String ContactName = input.next();
 		for (int i = 0; i < contacts.size(); i++) { 
-			Contact contact = contacts.get(i);
-			if(contact.getName().equals(ContactName) ) {
+			ContactInput contactInput = contacts.get(i);
+			if(contactInput.getName().equals(ContactName) ) {
 				int num = -1;
 				while (num != 5) {
 					System.out.println("**Contact Info Edit Menu**");
@@ -84,22 +87,22 @@ public class ContactManager {
 					if (num == 1) {
 						System.out.print("Contact Name: ");
 						String name = input.next();
-						contact.setName(name);
+						contactInput.setName(name);
 					}
 					else if (num == 2) {
 						System.out.print("Contact Number: ");
 						String number = input.next();
-						contact.setNumber(number);
+						contactInput.setNumber(number);
 					}
 					else if (num == 3) {
 						System.out.print("Email address: ");
 						String email = input.next();	
-						contact.setEmail(email);
+						contactInput.setEmail(email);
 					}
 					else if (num == 4) {
 						System.out.print("Address :");
 						String address = input.next();
-						contact.setAddress(address);
+						contactInput.setAddress(address);
 					}
 					else {
 						continue;
