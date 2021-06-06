@@ -1,3 +1,4 @@
+package Manager;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -6,6 +7,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import Gui.WindowFrame;
 import log.EventLogger;
 
 public class MenuManager {
@@ -18,12 +21,14 @@ public class MenuManager {
 		if(contactManager == null) {
 			contactManager = new ContactManager(input);
 		}
+		
+		WindowFrame frame = new WindowFrame(contactManager);
 		selectMenu(input, contactManager);
 		putObject(contactManager,"contactmanager.ser");
-	}
+	} 
 
 	public static void selectMenu(Scanner input, ContactManager contactManager) {
-		int num = 0;
+		int num = -1;
 		while(num != 6) {
 			try {
 				showMenu();

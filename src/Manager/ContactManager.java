@@ -1,8 +1,10 @@
+package Manager;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import Contact.Contact;
 import Contact.ContactInput;
 import Contact.ContactKind;
 import Contact.RestuarantsContact;
@@ -130,6 +132,14 @@ public class ContactManager implements Serializable {
 		for (int i = 0; i < contacts.size(); i++) {
 			contacts.get(i).printInfo();
 		}
+	}
+
+	public int size() {
+		return contacts.size();
+	}
+
+	public ContactInput get(int index) {
+		return (Contact) contacts.get(index);
 	}
 
 	public void DeveloperInformation() { 
